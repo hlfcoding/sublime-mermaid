@@ -1,3 +1,8 @@
+# Mermaid (for Sublime)
+
+> :tropical_fish: The missing [Sublime Text 3][] package for [Mermaid][].
+
+```mermaid
 %% Example code
 graph BT
   ID-1[This is the text in the box]
@@ -29,3 +34,7 @@ graph RL
   ID-1((This is the text in the circle))
   ID-2((This is the text in the circle))
   ID-1 --- This is the text --> ID-2
+```
+
+[Sublime Text 3]: http://www.sublimetext.com
+[Mermaid]: http://knsv.github.io/mermaid
