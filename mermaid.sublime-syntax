@@ -1,0 +1,84 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+name: Mermaid
+file_extensions:
+  - mermaid
+scope: source.mermaid
+variables:
+  node: \b\S+\b
+  node_from: ^\s*{{node}}\s?
+  node_to: \s?{{node}}\s*$
+contexts:
+  main:
+    - match: '%%'
+      scope: punctuation.definition.comment.mermaid
+      push: line_comment
+
+    - match: <
+      scope: punctuation.definition.comment.mermaid.html
+      push: line_comment
+
+    - include: quoted_string
+
+    - match: '^\s*(click)\s+{{node}}\s+'
+      captures:
+        1: keyword.type.interaction.mermaid
+      push:
+        - meta_scope: meta.declaration.graph.interaction.mermaid
+        - match: \b\w+\b
+          scope: entity.name.callback.interaction.mermaid
+        - include: quoted_string
+        - match: $
+          pop: true
+
+    - match: ^\s*(graph)\s+
+      captures:
+        1: keyword.type.main.mermaid
+      push:
+        - meta_scope: meta.declaration.graph.mermaid
+        - match: \b(T(B|D)|BT|LR|RL)\b
+          scope: constant.type.graph.mermaid
+        - match: $
+          pop: true
+
+    - match: "{{node_from}}(--(-|\\>)){{node_to}}"
+      captures:
+        1: keyword.operator.type.link.mermaid
+      scope: meta.declaration.graph.link.mermaid
+
+    - match: "{{node_from}}(---?)\\s?"
+      captures:
+        1: keyword.operator.type.link.begin.mermaid
+      push:
+        - meta_scope: meta.declaration.graph.link.mermaid
+        - meta_content_scope: string.text.link.mermaid
+        - match: "\\s?(--(-|\\>)?){{node_to}}"
+          captures:
+            1: keyword.operator.type.link.end.mermaid
+          pop: true
+
+    - match: "^\\s*{{node}}(\\[|\\(+|\\>|\\{)"
+      captures:
+        1: keyword.operator.type.node.begin.mermaid
+      push:
+        - meta_scope: meta.declaration.graph.node.mermaid
+        - meta_content_scope: string.text.node.mermaid
+        - match: "(\\]|\\)+|\\})\\s*$"
+          captures:
+            1: keyword.operator.type.node.end.mermaid
+          pop: true
+
+  line_comment:
+    - meta_scope: comment.line.mermaid
+    - match: $
+      pop: true
+
+  quoted_string:
+    - match: '"'
+      scope: punctuation.definition.string.begin.mermaid
+      push:
+        - meta_scope: string.quoted.double.mermaid
+        - match: '"'
+          scope: punctuation.definition.string.end.mermaid
+          pop: true
