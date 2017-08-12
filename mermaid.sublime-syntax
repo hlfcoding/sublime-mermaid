@@ -10,14 +10,15 @@ variables:
   node_from: ^\s*{{node}}\s?
   node_to: \s?{{node}}\s*$
 contexts:
-  main:
-    - match: '%%'
-      scope: punctuation.definition.comment.mermaid
-      push: line_comment
+  prototype:
+    - include: line_comment
 
+  main:
     - match: <
-      scope: punctuation.definition.comment.mermaid.html
-      push: line_comment
+      push:
+        - meta_scope: punctuation.definition.comment.mermaid.html
+        - match: $
+          pop: true
 
     - include: quoted_string
 
@@ -64,15 +65,17 @@ contexts:
       push:
         - meta_scope: meta.declaration.graph.node.mermaid
         - meta_content_scope: string.text.node.mermaid
-        - match: "(\\]|\\)+|\\})\\s*$"
+        - match: "(\\]|\\)+|\\})(\\b|\\s)"
           captures:
             1: keyword.operator.type.node.end.mermaid
           pop: true
 
   line_comment:
-    - meta_scope: comment.line.mermaid
-    - match: $
-      pop: true
+    - match: '%%'
+      push:
+        - meta_scope: punctuation.definition.comment.mermaid
+        - match: $
+          pop: true
 
   quoted_string:
     - match: '"'
