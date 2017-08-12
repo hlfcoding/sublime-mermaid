@@ -59,9 +59,10 @@ contexts:
             1: keyword.operator.type.link.end.mermaid
           pop: true
 
-    - match: "^\\s*{{node}}(\\[|\\(+|\\>|\\{)"
+    - match: "^\\s*({{node}})(\\[|\\(+|\\>|\\{)"
       captures:
-        1: keyword.operator.type.node.begin.mermaid
+        1: entity.name.node.mermaid
+        2: keyword.operator.type.node.begin.mermaid
       push:
         - meta_scope: meta.declaration.graph.node.mermaid
         - meta_content_scope: string.text.node.mermaid
