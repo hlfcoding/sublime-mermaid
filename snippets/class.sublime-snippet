@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[class ${1:type}-${2:ID} ${3:className}]]></content>
+  <tabTrigger>class</tabTrigger>
+  <scope>source.mermaid</scope>
+</snippet>

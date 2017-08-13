@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[subgraph ${1:Text}
+	${2}
+end
+]]></content>
+  <tabTrigger>subgraph</tabTrigger>
+  <scope>source.mermaid</scope>
+</snippet>

@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[graph ${1:TB/LR/BT/RL}]]></content>
+  <tabTrigger>graph</tabTrigger>
+  <scope>source.mermaid</scope>
+</snippet>

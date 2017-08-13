@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[click ${1:type}-${2:ID} ${3:callback/"url"}${4: "${5:Tooltip}"}]]></content>
+  <tabTrigger>click</tabTrigger>
+  <scope>source.mermaid</scope>
+</snippet>
