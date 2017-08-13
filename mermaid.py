@@ -28,6 +28,11 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
       <body style="font-family:'system-ui',sans-serif; text-align:center;">
         <h1>Mermaid Viewer: %(title)s</h1>
         <div style="overflow:auto;">
+          <nav>
+            <a href="data:image/svg+xml;base64," download="%(title)s.svg">Save as SVG</a>
+            &middot;
+            <a href="http://svgtopng.com" target="_blank">Save as PNG</a>
+          </nav>
           <div class="mermaid">
           %(mermaid)s
           </div>
@@ -35,6 +40,10 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
         <script src="https://unpkg.com/mermaid@7.0.3/dist/mermaid.min.js"></script>
         <script>
           mermaid.initialize({ logLevel: 4 });
+          setTimeout(() => {
+            document.querySelector('a[download]').href +=
+            btoa(document.querySelector('svg').outerHTML);
+          }, 1000);
         </script>
       </body>
     </html>
