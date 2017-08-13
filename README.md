@@ -2,6 +2,11 @@
 
 > :tropical_fish: The missing [Sublime Text 3][] package for [Mermaid][].
 
+- [x] Flow diagram support, with caveats:
+  - Dotted and thick links aren't supported due to their ugliness.
+  - `--` isn't supported, since `---` is more conventional.
+  - `style` isn't supported, since `class` (CSS) support is easier.
+
 ```mermaid
 %% Example code
 graph BT %% tab completion: 'graph'
@@ -40,6 +45,13 @@ graph RL %% tab completion: 'graph'
   ID-2((This is the text in the circle))
   ID-1 --- This is the link text --> ID-2 %% tab completion: 'link'
 ```
+
+- [ ] Sequence diagram support
+- [ ] Gantt diagram support
+- [ ] Exporting
+- [ ] Preview in browser
+- [ ] Windows support
+- [ ] Linux support
 
 [Sublime Text 3]: http://www.sublimetext.com
 [Mermaid]: http://knsv.github.io/mermaid
