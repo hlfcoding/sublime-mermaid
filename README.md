@@ -10,6 +10,10 @@ graph BT
   ID-1---ID-2
   click ID-1 callback "Tooltip for a callback"
   class ID-1 className
+  subgraph This is the subgraph text
+    ID-3[This is the text in the circle]
+    ID-1-->ID-3
+  end
 
 %% Example code
 graph TB

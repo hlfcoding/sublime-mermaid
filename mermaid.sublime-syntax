@@ -55,6 +55,17 @@ contexts:
         - match: $
           pop: true
 
+    - match: ^\s*(subgraph)\s+({{text}})$
+      captures:
+        1: keyword.type.group.begin.mermaid
+        2: string.text.subgraph.mermaid
+      push:
+        - meta_scope: meta.declaration.subgraph.mermaid
+        - include: main
+        - match: ^\s*end\b
+          scope: keyword.type.group.end.mermaid
+          pop: true
+
     - match: "{{node_from}}(---)\\s?"
       captures:
         1: keyword.operator.link.begin.mermaid
