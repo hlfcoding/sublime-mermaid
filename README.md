@@ -14,7 +14,7 @@ graph BT
 graph TB
   ID-1>This is the text in the asymmetric box] %% tab completion: 'node'
   ID-2>This is the text in the asymmetric box]
-  ID-1 --- ID-2
+  ID-1 --> ID-2
   click ID-1 "http://www.github.com" "This is a tooltip for a link"
 
 %% Example code
@@ -27,7 +27,7 @@ graph TD
 graph LR
   ID-1{This is the text in the rhombus} %% tab completion: 'node'
   ID-2{This is the text in the rhombus}
-  ID-1-->ID-2
+  ID-1-->|This is the link text|ID-2
 
 %% Example code
 graph RL

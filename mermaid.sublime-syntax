@@ -6,9 +6,11 @@ file_extensions:
   - mermaid
 scope: source.mermaid
 variables:
+  link: "--(?:-|\\>)"
   node: \b\S+\b
   node_from: ^\s*{{node}}\s?
-  node_to: \s?{{node}}\s*$
+  node_to: \s?{{node}}\b
+  text: .+
 contexts:
   prototype:
     - include: line_comment
@@ -43,32 +45,41 @@ contexts:
         - match: $
           pop: true
 
-    - match: "{{node_from}}(--(-|\\>)){{node_to}}"
+    - match: "{{node_from}}(---)\\s?"
       captures:
-        1: keyword.operator.type.link.mermaid
-      scope: meta.declaration.graph.link.mermaid
-
-    - match: "{{node_from}}(---?)\\s?"
-      captures:
-        1: keyword.operator.type.link.begin.mermaid
+        1: keyword.operator.link.begin.mermaid
       push:
         - meta_scope: meta.declaration.graph.link.mermaid
-        - meta_content_scope: string.text.link.mermaid
-        - match: "\\s?(--(-|\\>)?){{node_to}}"
+        - match: "({{text}})\\s?({{link}})"
           captures:
-            1: keyword.operator.type.link.end.mermaid
+            1: string.text.link.mermaid
+            2: keyword.operator.link.end.mermaid
+        - match: '{{node_to}}'
+          pop: true
+
+    - match: "{{node_from}}({{link}})"
+      captures:
+        1: keyword.operator.link.mermaid
+      push:
+        - meta_scope: meta.declaration.graph.link.mermaid
+        - match: "(\\|)({{text}})(\\|)"
+          captures:
+            1: keyword.operator.link.text.begin.mermaid
+            2: string.text.link.mermaid
+            3: keyword.operator.link.text.end.mermaid
+        - match: '{{node_to}}'
           pop: true
 
     - match: "^\\s*({{node}})(\\[|\\(+|\\>|\\{)"
       captures:
         1: entity.name.node.mermaid
-        2: keyword.operator.type.node.begin.mermaid
+        2: keyword.operator.node.begin.mermaid
       push:
         - meta_scope: meta.declaration.graph.node.mermaid
         - meta_content_scope: string.text.node.mermaid
         - match: "(\\]|\\)+|\\})(\\b|\\s)"
           captures:
-            1: keyword.operator.type.node.end.mermaid
+            1: keyword.operator.node.end.mermaid
           pop: true
 
   line_comment:
