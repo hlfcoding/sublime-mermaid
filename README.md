@@ -46,10 +46,13 @@ graph RL %% tab completion: 'graph'
   ID-1 --- This is the link text --> ID-2 %% tab completion: 'link'
 ```
 
+- [x] Preview in browser
+  - From the Command Palette: `Mermaid: View In Browser`
+    Defaults to the entire file, unless there is a selection.
+
 - [ ] Sequence diagram support
 - [ ] Gantt diagram support
 - [ ] Exporting
-- [ ] Preview in browser
 - [ ] Windows support
 - [ ] Linux support
 
