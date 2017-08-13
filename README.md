@@ -9,23 +9,23 @@
 
 ```mermaid
 %% Example code
-graph BT %% tab completion: 'graph'
+graph TB %% tab completion: 'graph'
   ID-1[This is the text in the box] %% tab completion: 'node'
   ID-2[This is the text in the box]
   ID-1---ID-2 %% tab completion: 'link'
-  click ID-1 callback "Tooltip for a callback" %% tab completion: 'click'
-  class ID-1 className %% tab completion: 'class'
+  click ID-1 "http://www.github.com" "This is a tooltip for a link"
   subgraph This is the subgraph text
-    ID-3[This is the text in the circle]
-    ID-1-->ID-3
+    ID-3[This is the text in the box]
+    ID-2-->ID-3
   end %% tab completion: 'subgraph'
 
 %% Example code
-graph TB %% tab completion: 'graph'
+graph BT %% tab completion: 'graph'
   ID-1>This is the text in the asymmetric box] %% tab completion: 'node'
   ID-2>This is the text in the asymmetric box]
   ID-1 --> ID-2 %% tab completion: 'link'
-  click ID-1 "http://www.github.com" "This is a tooltip for a link"
+  click ID-1 callback "Tooltip for a callback" %% tab completion: 'click'
+  class ID-1 className %% tab completion: 'class'
 
 %% Example code
 graph TD %% tab completion: 'graph'
@@ -50,9 +50,12 @@ graph RL %% tab completion: 'graph'
   - From the Command Palette: `Mermaid: View In Browser`
     Defaults to the entire file, unless there is a selection.
 
+- [x] Exporting, with caveats:
+  - PNG conversion from SVG conflicts with opening file-URL's, so it's a link.
+  - Converted SVG may be missing some styling.
+
 - [ ] Sequence diagram support
 - [ ] Gantt diagram support
-- [ ] Exporting
 - [ ] Windows support
 - [ ] Linux support
 
