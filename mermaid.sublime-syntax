@@ -24,6 +24,16 @@ contexts:
 
     - include: quoted_string
 
+    - match: '^\s*(class)\s+{{node}}\s+'
+      captures:
+        1: keyword.type.styling.mermaid
+      push:
+        - meta_scope: meta.declaration.graph.styling.mermaid
+        - match: \b\w+\b
+          scope: entity.name.class.styling.mermaid
+        - match: $
+          pop: true
+
     - match: '^\s*(click)\s+{{node}}\s+'
       captures:
         1: keyword.type.interaction.mermaid

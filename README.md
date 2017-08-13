@@ -9,6 +9,7 @@ graph BT
   ID-2[This is the text in the box]
   ID-1---ID-2
   click ID-1 callback "Tooltip for a callback"
+  class ID-1 className
 
 %% Example code
 graph TB
