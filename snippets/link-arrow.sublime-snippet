@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[${1:type}-${2:ID}-->${3:type}-${4:ID}]]></content>
+  <tabTrigger>link</tabTrigger>
+  <scope>source.mermaid</scope>
+</snippet>
