@@ -7,13 +7,15 @@
   - `--` isn't supported, since `---` is more conventional.
   - `style` isn't supported, since `class` (CSS) support is easier.
 
+![screen-shot](https://user-images.githubusercontent.com/100884/29259374-54e94d34-8077-11e7-91ea-67e92b2ea2d9.png)
+
 ```mermaid
 %% Example code
 graph TB %% tab completion: 'graph'
   ID-1[This is the text in the box] %% tab completion: 'node'
   ID-2[This is the text in the box]
   ID-1---ID-2 %% tab completion: 'link'
-  click ID-1 "http://www.github.com" "This is a tooltip for a link"
+  click ID-1 "http://www.github.com" "Tooltip for a link" %% tab completion: 'click'
   subgraph This is the subgraph text
     ID-3[This is the text in the box]
     ID-2-->ID-3
@@ -48,11 +50,13 @@ graph RL %% tab completion: 'graph'
 
 - [x] Preview in browser
   - From the Command Palette: `Mermaid: View In Browser`
-    Defaults to the entire file, unless there is a selection.
+  - Defaults to the entire file, unless there is a selection.
 
 - [x] Exporting, with caveats:
   - PNG conversion from SVG conflicts with opening file-URL's, so it's a link.
   - Converted SVG may be missing some styling.
+
+![screen-shot](https://user-images.githubusercontent.com/100884/29259302-8ba6ba24-8076-11e7-996c-18cad5df138f.png)
 
 - [ ] Sequence diagram support
 - [ ] Gantt diagram support
