@@ -2,6 +2,8 @@
 
 > :tropical_fish: The missing [Sublime Text 3][] package for [Mermaid][].
 
+[Install Mermaid][] from [Package Control][].
+
 - [x] Flow diagram support, with caveats:
   - Dotted and thick links aren't supported due to their ugliness.
   - `--` isn't supported, since `---` is more conventional.
@@ -65,3 +67,5 @@ graph RL %% tab completion: 'graph'
 
 [Sublime Text 3]: http://www.sublimetext.com
 [Mermaid]: http://knsv.github.io/mermaid
+[Install Mermaid]: https://packagecontrol.io/packages/Mermaid
+[Package Control]: https://packagecontrol.io
