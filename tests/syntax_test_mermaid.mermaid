@@ -20,7 +20,27 @@ graph TB %% tab completion: 'graph'
   ID-2[This is the text in the box]
   ID-1---ID-2 %% tab completion: 'link'
 %% ^ meta.declaration.graph.link.mermaid
+%%    ^^^ keyword.operator.link.mermaid
 %%            ^ punctuation.definition.comment.mermaid
+  ID-1---This is the link text---ID-2 %% tab completion: 'link'
+%% ^ meta.declaration.graph.link.mermaid
+%%    ^^^ keyword.operator.link.mermaid
+%%       ^ string.text.link.mermaid
+%%                            ^^^ keyword.operator.link.mermaid
+%%                                    ^ punctuation.definition.comment.mermaid
+  ID-1-->|This is the link text|ID-2 %% tab completion: 'link'
+%% ^ meta.declaration.graph.link.mermaid
+%%    ^^^ keyword.operator.link.mermaid
+%%       ^ keyword.operator.link.text.begin.mermaid
+%%        ^ string.text.link.mermaid
+%%                             ^ keyword.operator.link.text.end.mermaid
+%%                                   ^ punctuation.definition.comment.mermaid
+  ID-1 --- This is the link text --> ID-2 %% tab completion: 'link'
+%% ^ meta.declaration.graph.link.mermaid
+%%     ^^^ keyword.operator.link.mermaid
+%%         ^ string.text.link.mermaid
+%%                               ^^^ keyword.operator.link.mermaid
+%%                                        ^ punctuation.definition.comment.mermaid
 
   class ID-1 className %% tab completion: 'class'
 %% <- meta.declaration.graph.styling.mermaid
@@ -47,6 +67,8 @@ graph TB %% tab completion: 'graph'
 %%         ^ string.text.subgraph.mermaid
     ID-3[This is the text in the box]
     ID-2-->ID-3
+%%  ^ meta.declaration.subgraph.mermaid
+%%      ^^^ keyword.operator.link.mermaid
   end %% tab completion: 'subgraph'
 %% <- meta.declaration.subgraph.mermaid
 %% ^ keyword.type.group.end.mermaid

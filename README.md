@@ -6,6 +6,7 @@
 
 - [x] Flow diagram support, with caveats:
   - Dotted and thick links aren't supported due to their ugliness.
+  - Inline node definition isn't supported, plus it does not scale well.
   - `--` isn't supported, since `---` is more conventional.
   - `style` isn't supported, since `class` (CSS) support is easier.
 
