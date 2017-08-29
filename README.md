@@ -70,3 +70,12 @@ graph RL %% tab completion: 'graph'
 [Mermaid]: http://knsv.github.io/mermaid
 [Install Mermaid]: https://packagecontrol.io/packages/Mermaid
 [Package Control]: https://packagecontrol.io
+
+---
+
+Development:
+
+```sh
+$ ln -s ~/Projects/sublime-mermaid ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Mermaid
+$ rm !$
+```
