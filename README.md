@@ -76,6 +76,13 @@ graph RL %% tab completion: 'graph'
 Development:
 
 ```sh
-$ ln -s ~/Projects/sublime-mermaid ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Mermaid
-$ rm !$
+# Remove package.
+$ my_project_path=~/Projects/sublime-mermaid
+$ my_packages_path=~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+$ ln -s "$my_project_path" "$my_packages_path/Mermaid"
+$ cp "$my_project_path/tests/syntax_test_mermaid.mermaid" "$my_packages_path/Default"
+# Develop...
+$ rm "$my_packages_path/Default/syntax_test_mermaid.mermaid"
+$ rm "$my_packages_path/Mermaid"
+# Install package.
 ```
