@@ -24,6 +24,9 @@ contexts:
 
     - include: quoted_string
 
+    # graph
+    # -----
+
     - match: '^\s*(class)\s+{{node}}\s+'
       captures:
         1: keyword.type.styling.mermaid
@@ -93,6 +96,26 @@ contexts:
         - match: "(\\]|\\)+|\\})(\\b|\\s)"
           captures:
             1: keyword.operator.node.end.mermaid
+          pop: true
+
+    # diagram
+    # -------
+
+    - match: ^\s*(sequenceDiagram)\s+
+      captures:
+        1: keyword.type.main.mermaid
+      push:
+        - meta_scope: meta.declaration.diagram.mermaid
+        - match: $
+          pop: true
+
+    - match: ^\s*(participant)\s+
+      captures:
+        1: keyword.type.main.mermaid
+      push:
+        - meta_scope: meta.declaration.diagram.participant.mermaid
+        - meta_content_scope: entity.name.diagram.participant.mermaid
+        - match: $
           pop: true
 
   line_comment:
