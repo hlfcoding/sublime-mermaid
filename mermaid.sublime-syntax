@@ -24,9 +24,11 @@ contexts:
 
     - include: quoted_string
 
-    # graph
-    # -----
+    - include: graph
 
+    - include: diagram
+
+  graph:
     - match: '^\s*(class)\s+{{node}}\s+'
       captures:
         1: keyword.type.styling.mermaid
@@ -98,9 +100,7 @@ contexts:
             1: keyword.operator.node.end.mermaid
           pop: true
 
-    # diagram
-    # -------
-
+  diagram:
     - match: ^\s*(sequenceDiagram)\s+
       captures:
         1: keyword.type.main.mermaid
