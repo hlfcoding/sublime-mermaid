@@ -5,73 +5,73 @@
 
 graph TB %% tab completion: 'graph'
 %% <- meta.declaration.graph.mermaid
-%%  ^ keyword.type.graph.main.mermaid
+%%  ^ keyword.type.graph.mermaid
 %%    ^ constant.type.graph.mermaid
 %%       ^ punctuation.definition.comment.mermaid
 
   ID-1[This is the text in the box] %% tab completion: 'node'
-%% <- meta.declaration.graph.node.mermaid
-%%   ^ entity.name.graph.node.mermaid
-%%    ^ keyword.operator.graph.node.begin.mermaid
-%%     ^ string.text.graph.node.mermaid
-%%                                ^ keyword.operator.graph.node.end.mermaid
+%% <- meta.declaration.node.graph.mermaid
+%%   ^ entity.name.node.graph.mermaid
+%%    ^ keyword.operator.begin.node.graph.mermaid
+%%     ^ string.text.node.graph.mermaid
+%%                                ^ keyword.operator.end.node.graph.mermaid
 %%                                  ^ punctuation.definition.comment.mermaid
 
   ID-2[This is the text in the box]
   ID-1---ID-2 %% tab completion: 'link'
-%% ^ meta.declaration.graph.link.mermaid
-%%    ^^^ keyword.operator.graph.link.mermaid
+%% ^ meta.declaration.link.graph.mermaid
+%%    ^^^ keyword.operator.link.graph.mermaid
 %%            ^ punctuation.definition.comment.mermaid
   ID-1---This is the link text---ID-2 %% tab completion: 'link'
-%% ^ meta.declaration.graph.link.mermaid
-%%    ^^^ keyword.operator.graph.link.mermaid
-%%       ^ string.text.graph.link.mermaid
-%%                            ^^^ keyword.operator.graph.link.mermaid
+%% ^ meta.declaration.link.graph.mermaid
+%%    ^^^ keyword.operator.link.graph.mermaid
+%%       ^ string.text.link.graph.mermaid
+%%                            ^^^ keyword.operator.link.graph.mermaid
 %%                                    ^ punctuation.definition.comment.mermaid
   ID-1-->|This is the link text|ID-2 %% tab completion: 'link'
-%% ^ meta.declaration.graph.link.mermaid
-%%    ^^^ keyword.operator.graph.link.mermaid
-%%       ^ keyword.operator.graph.link.text.begin.mermaid
-%%        ^ string.text.graph.link.mermaid
-%%                             ^ keyword.operator.graph.link.text.end.mermaid
+%% ^ meta.declaration.link.graph.mermaid
+%%    ^^^ keyword.operator.link.graph.mermaid
+%%       ^ keyword.operator.begin.text.link.graph.mermaid
+%%        ^ string.text.link.graph.mermaid
+%%                             ^ keyword.operator.end.text.link.graph.mermaid
 %%                                   ^ punctuation.definition.comment.mermaid
   ID-1 --- This is the link text --> ID-2 %% tab completion: 'link'
-%% ^ meta.declaration.graph.link.mermaid
-%%     ^^^ keyword.operator.graph.link.mermaid
-%%         ^ string.text.graph.link.mermaid
-%%                               ^^^ keyword.operator.graph.link.mermaid
+%% ^ meta.declaration.link.graph.mermaid
+%%     ^^^ keyword.operator.link.graph.mermaid
+%%         ^ string.text.link.graph.mermaid
+%%                               ^^^ keyword.operator.link.graph.mermaid
 %%                                        ^ punctuation.definition.comment.mermaid
 
   class ID-1 className %% tab completion: 'class'
-%% <- meta.declaration.graph.styling.mermaid
-%% ^ keyword.type.graph.styling.mermaid
-%%           ^ entity.name.graph.styling.mermaid
+%% <- meta.declaration.styling.graph.mermaid
+%% ^ keyword.type.styling.graph.mermaid
+%%           ^ entity.name.styling.graph.mermaid
 %%                     ^ punctuation.definition.comment.mermaid
 
-  click ID-1 "http://www.github.com" "Tooltip for a link" %% tab completion: 'click'
-%% <- meta.declaration.graph.interaction.mermaid
-%% ^ keyword.type.interaction.mermaid
+  click ID-1 "https://github.com" "Tooltip text" %% tab completion: 'click'
+%% <- meta.declaration.interaction.graph.mermaid
+%% ^ keyword.type.interaction.graph.mermaid
 %%           ^ punctuation.definition.string.begin.mermaid
 %%            ^ string.quoted.double.mermaid
-%%                                 ^ punctuation.definition.string.end.mermaid
-%%                                   ^ punctuation.definition.string.begin.mermaid
-%%                                    ^ string.quoted.double.mermaid
-%%                                                      ^ punctuation.definition.string.end.mermaid
-%%                                                        ^ punctuation.definition.comment.mermaid
+%%                              ^ punctuation.definition.string.end.mermaid
+%%                                ^ punctuation.definition.string.begin.mermaid
+%%                                 ^ string.quoted.double.mermaid
+%%                                             ^ punctuation.definition.string.end.mermaid
+%%                                               ^ punctuation.definition.comment.mermaid
   click ID-1 callback "Tooltip for a callback" %% tab completion: 'click'
-%%           ^ entity.name.callback.interaction.mermaid
+%%           ^ entity.name.callback.interaction.graph.mermaid
 
   subgraph This is the subgraph text
-%% <- meta.declaration.subgraph.mermaid
-%% ^ keyword.type.subgraph.begin.mermaid
-%%         ^ string.text.subgraph.mermaid
+%% <- meta.declaration.sub.graph.mermaid
+%% ^ keyword.type.begin.sub.graph.mermaid
+%%         ^ string.text.sub.graph.mermaid
     ID-3[This is the text in the box]
     ID-2-->ID-3
-%%  ^ meta.declaration.subgraph.mermaid
-%%      ^^^ keyword.operator.graph.link.mermaid
+%%  ^ meta.declaration.sub.graph.mermaid
+%%      ^^^ keyword.operator.link.graph.mermaid
   end %% tab completion: 'subgraph'
-%% <- meta.declaration.subgraph.mermaid
-%% ^ keyword.type.subgraph.end.mermaid
+%% <- meta.declaration.sub.graph.mermaid
+%% ^ keyword.type.end.sub.graph.mermaid
 %%    ^ punctuation.definition.comment.mermaid
 
 sequenceDiagram %% tab completion: 'sequenceDiagram'
