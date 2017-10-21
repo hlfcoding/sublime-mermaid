@@ -31,11 +31,11 @@ contexts:
   graph:
     - match: '^\s*(class)\s+{{node}}\s+'
       captures:
-        1: keyword.type.styling.mermaid
+        1: keyword.type.graph.styling.mermaid
       push:
         - meta_scope: meta.declaration.graph.styling.mermaid
         - match: \b\w+\b
-          scope: entity.name.class.styling.mermaid
+          scope: entity.name.graph.styling.mermaid
         - match: $
           pop: true
 
@@ -52,7 +52,7 @@ contexts:
 
     - match: ^\s*(graph)\s+
       captures:
-        1: keyword.type.main.mermaid
+        1: keyword.type.graph.main.mermaid
       push:
         - meta_scope: meta.declaration.graph.mermaid
         - match: \b(T(B|D)|BT|LR|RL)\b
@@ -62,48 +62,48 @@ contexts:
 
     - match: ^\s*(subgraph)\s+({{text}})$
       captures:
-        1: keyword.type.group.begin.mermaid
+        1: keyword.type.subgraph.begin.mermaid
         2: string.text.subgraph.mermaid
       push:
         - meta_scope: meta.declaration.subgraph.mermaid
         - include: main
         - match: ^\s*end\b
-          scope: keyword.type.group.end.mermaid
+          scope: keyword.type.subgraph.end.mermaid
           pop: true
 
     - match: "{{node_from}}({{link}})"
       captures:
-        1: keyword.operator.link.mermaid
+        1: keyword.operator.graph.link.mermaid
       push:
         - meta_scope: meta.declaration.graph.link.mermaid
         - match: "(\\|)({{text}})(\\|)"
           captures:
-            1: keyword.operator.link.text.begin.mermaid
-            2: string.text.link.mermaid
-            3: keyword.operator.link.text.end.mermaid
+            1: keyword.operator.graph.link.text.begin.mermaid
+            2: string.text.graph.link.mermaid
+            3: keyword.operator.graph.link.text.end.mermaid
         - match: "\\s?({{text}})\\s?({{link}})"
           captures:
-            1: string.text.link.mermaid
-            2: keyword.operator.link.mermaid
+            1: string.text.graph.link.mermaid
+            2: keyword.operator.graph.link.mermaid
         - match: '{{node_to}}'
           pop: true
 
     - match: "^\\s*({{node}})(\\[|\\(+|\\>|\\{)"
       captures:
-        1: entity.name.node.mermaid
-        2: keyword.operator.node.begin.mermaid
+        1: entity.name.graph.node.mermaid
+        2: keyword.operator.graph.node.begin.mermaid
       push:
         - meta_scope: meta.declaration.graph.node.mermaid
-        - meta_content_scope: string.text.node.mermaid
+        - meta_content_scope: string.text.graph.node.mermaid
         - match: "(\\]|\\)+|\\})(\\b|\\s)"
           captures:
-            1: keyword.operator.node.end.mermaid
+            1: keyword.operator.graph.node.end.mermaid
           pop: true
 
   diagram:
     - match: ^\s*(sequenceDiagram)\s+
       captures:
-        1: keyword.type.main.mermaid
+        1: keyword.type.diagram.main.mermaid
       push:
         - meta_scope: meta.declaration.diagram.mermaid
         - match: $
@@ -111,7 +111,7 @@ contexts:
 
     - match: ^\s*(participant)\s+
       captures:
-        1: keyword.type.main.mermaid
+        1: keyword.type.diagram.main.mermaid
       push:
         - meta_scope: meta.declaration.diagram.participant.mermaid
         - meta_content_scope: entity.name.diagram.participant.mermaid

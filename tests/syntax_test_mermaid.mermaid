@@ -5,47 +5,47 @@
 
 graph TB %% tab completion: 'graph'
 %% <- meta.declaration.graph.mermaid
-%%  ^ keyword.type.main.mermaid
+%%  ^ keyword.type.graph.main.mermaid
 %%    ^ constant.type.graph.mermaid
 %%       ^ punctuation.definition.comment.mermaid
 
   ID-1[This is the text in the box] %% tab completion: 'node'
 %% <- meta.declaration.graph.node.mermaid
-%%   ^ entity.name.node.mermaid
-%%    ^ keyword.operator.node.begin.mermaid
-%%     ^ string.text.node.mermaid
-%%                                ^ keyword.operator.node.end.mermaid
+%%   ^ entity.name.graph.node.mermaid
+%%    ^ keyword.operator.graph.node.begin.mermaid
+%%     ^ string.text.graph.node.mermaid
+%%                                ^ keyword.operator.graph.node.end.mermaid
 %%                                  ^ punctuation.definition.comment.mermaid
 
   ID-2[This is the text in the box]
   ID-1---ID-2 %% tab completion: 'link'
 %% ^ meta.declaration.graph.link.mermaid
-%%    ^^^ keyword.operator.link.mermaid
+%%    ^^^ keyword.operator.graph.link.mermaid
 %%            ^ punctuation.definition.comment.mermaid
   ID-1---This is the link text---ID-2 %% tab completion: 'link'
 %% ^ meta.declaration.graph.link.mermaid
-%%    ^^^ keyword.operator.link.mermaid
-%%       ^ string.text.link.mermaid
-%%                            ^^^ keyword.operator.link.mermaid
+%%    ^^^ keyword.operator.graph.link.mermaid
+%%       ^ string.text.graph.link.mermaid
+%%                            ^^^ keyword.operator.graph.link.mermaid
 %%                                    ^ punctuation.definition.comment.mermaid
   ID-1-->|This is the link text|ID-2 %% tab completion: 'link'
 %% ^ meta.declaration.graph.link.mermaid
-%%    ^^^ keyword.operator.link.mermaid
-%%       ^ keyword.operator.link.text.begin.mermaid
-%%        ^ string.text.link.mermaid
-%%                             ^ keyword.operator.link.text.end.mermaid
+%%    ^^^ keyword.operator.graph.link.mermaid
+%%       ^ keyword.operator.graph.link.text.begin.mermaid
+%%        ^ string.text.graph.link.mermaid
+%%                             ^ keyword.operator.graph.link.text.end.mermaid
 %%                                   ^ punctuation.definition.comment.mermaid
   ID-1 --- This is the link text --> ID-2 %% tab completion: 'link'
 %% ^ meta.declaration.graph.link.mermaid
-%%     ^^^ keyword.operator.link.mermaid
-%%         ^ string.text.link.mermaid
-%%                               ^^^ keyword.operator.link.mermaid
+%%     ^^^ keyword.operator.graph.link.mermaid
+%%         ^ string.text.graph.link.mermaid
+%%                               ^^^ keyword.operator.graph.link.mermaid
 %%                                        ^ punctuation.definition.comment.mermaid
 
   class ID-1 className %% tab completion: 'class'
 %% <- meta.declaration.graph.styling.mermaid
-%% ^ keyword.type.styling.mermaid
-%%           ^ entity.name.class.styling.mermaid
+%% ^ keyword.type.graph.styling.mermaid
+%%           ^ entity.name.graph.styling.mermaid
 %%                     ^ punctuation.definition.comment.mermaid
 
   click ID-1 "http://www.github.com" "Tooltip for a link" %% tab completion: 'click'
@@ -63,22 +63,22 @@ graph TB %% tab completion: 'graph'
 
   subgraph This is the subgraph text
 %% <- meta.declaration.subgraph.mermaid
-%% ^ keyword.type.group.begin.mermaid
+%% ^ keyword.type.subgraph.begin.mermaid
 %%         ^ string.text.subgraph.mermaid
     ID-3[This is the text in the box]
     ID-2-->ID-3
 %%  ^ meta.declaration.subgraph.mermaid
-%%      ^^^ keyword.operator.link.mermaid
+%%      ^^^ keyword.operator.graph.link.mermaid
   end %% tab completion: 'subgraph'
 %% <- meta.declaration.subgraph.mermaid
-%% ^ keyword.type.group.end.mermaid
+%% ^ keyword.type.subgraph.end.mermaid
 %%    ^ punctuation.definition.comment.mermaid
 
 sequenceDiagram %% tab completion: 'sequenceDiagram'
 %% <- meta.declaration.diagram.mermaid
-%% ^ keyword.type.main.mermaid
+%% ^ keyword.type.diagram.main.mermaid
   participant Alice
-%% ^ keyword.type.main.mermaid
+%% ^ keyword.type.diagram.main.mermaid
 %% <- meta.declaration.diagram.participant.mermaid
 %%            ^ entity.name.diagram.participant.mermaid
   participant Bob
