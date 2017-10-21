@@ -76,17 +76,36 @@ graph TB %% tab completion: 'graph'
 
 sequenceDiagram %% tab completion: 'sequenceDiagram'
 %% <- meta.declaration.diagram.mermaid
-%% ^ keyword.type.diagram.main.mermaid
+%% ^ keyword.type.diagram.mermaid
   participant Alice
-%% ^ keyword.type.diagram.main.mermaid
-%% <- meta.declaration.diagram.participant.mermaid
-%%            ^ entity.name.diagram.participant.mermaid
+%% ^ keyword.type.actor.diagram.mermaid
+%% <- meta.declaration.actor.diagram.mermaid
+%%            ^ entity.name.actor.diagram.mermaid
   participant Bob
   Alice->John: Hello John, how are you?
+%% <- meta.declaration.message.diagram.mermaid
+%%     ^^ keyword.operator.message.diagram.mermaid
+%%           ^ keyword.operator.message.diagram.mermaid
+%%             ^ string.text.message.diagram.mermaid
   loop Healthcheck
+%% <- meta.declaration.loop.diagram.mermaid
+%% ^ keyword.type.begin.loop.diagram.mermaid
+%%     ^ string.text.loop.diagram.mermaid
       John->John: Fight against hypochondria
+%% <- meta.declaration.message.diagram.mermaid
+%%        ^^ keyword.operator.message.diagram.mermaid
+%%              ^ keyword.operator.message.diagram.mermaid
+%%                ^ string.text.message.diagram.mermaid
   end
+%% <- meta.declaration.loop.diagram.mermaid
+%% ^ keyword.type.end.loop.diagram.mermaid
   Note right of John: Rational thoughts <br/>prevail...
+%% <- meta.declaration.note.diagram.mermaid
+%% ^ keyword.type.note.diagram.mermaid
+%%     ^ constant.type.note.diagram.mermaid
+%%           ^ constant.type.note.diagram.mermaid
+%%                  ^ keyword.operator.note.diagram.mermaid
+%%                    ^ string.text.note.diagram.mermaid
   John-->Alice: Great!
   John->Bob: How about you?
   Bob-->John: Jolly good!

@@ -103,7 +103,7 @@ contexts:
   diagram:
     - match: ^\s*(sequenceDiagram)\s+
       captures:
-        1: keyword.type.diagram.main.mermaid
+        1: keyword.type.diagram.mermaid
       push:
         - meta_scope: meta.declaration.diagram.mermaid
         - match: $
@@ -111,10 +111,42 @@ contexts:
 
     - match: ^\s*(participant)\s+
       captures:
-        1: keyword.type.diagram.main.mermaid
+        1: keyword.type.actor.diagram.mermaid
       push:
-        - meta_scope: meta.declaration.diagram.participant.mermaid
-        - meta_content_scope: entity.name.diagram.participant.mermaid
+        - meta_scope: meta.declaration.actor.diagram.mermaid
+        - meta_content_scope: entity.name.actor.diagram.mermaid
+        - match: $
+          pop: true
+
+    - match: ^\s*(loop)\s+({{text}})$
+      captures:
+        1: keyword.type.begin.loop.diagram.mermaid
+        2: string.text.loop.diagram.mermaid
+      push:
+        - meta_scope: meta.declaration.loop.diagram.mermaid
+        - include: diagram
+        - match: ^\s*end\b
+          scope: keyword.type.end.loop.diagram.mermaid
+          pop: true
+
+    - match: ^\s*(Note)\s+((?:left|right)\sof|over)\s+{{node}}(:)
+      captures:
+        1: keyword.type.note.diagram.mermaid
+        2: constant.type.note.diagram.mermaid
+        3: keyword.operator.note.diagram.mermaid
+      push:
+        - meta_scope: meta.declaration.note.diagram.mermaid
+        - meta_content_scope: string.text.note.diagram.mermaid
+        - match: $
+          pop: true
+
+    - match: "{{node_from}}(-?-\\>){{node_to}}(:)"
+      captures:
+        1: keyword.operator.message.diagram.mermaid
+        2: keyword.operator.message.diagram.mermaid
+      push:
+        - meta_scope: meta.declaration.message.diagram.mermaid
+        - meta_content_scope: string.text.message.diagram.mermaid
         - match: $
           pop: true
 
