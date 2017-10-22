@@ -49,6 +49,35 @@ graph RL %% tab completion: 'graph'
   ID-1((This is the text in the circle)) %% tab completion: 'node'
   ID-2((This is the text in the circle))
   ID-1 --- This is the link text --> ID-2 %% tab completion: 'link'
+
+sequenceDiagram %% tab completion: 'diagram'
+  participant A as Alice %% tab completion: 'participant'
+  participant B as Bob
+  participant C as Carol
+  Note left of A: Alice likes to chat %% tab completion: 'note'
+  A->B: Hello Bob, how are you? %% tab completion: 'message'
+  loop Healthcheck
+    B->B: Bob checks himself...
+  end %% tab completion: 'loop'
+  Note over B: Bob whispers when sick
+  alt is sick %% tab completion: 'alt'
+    B-->A: Not so good :(
+  else is well
+    B->A: Feeling fresh like a daisy
+  end
+  opt Extra response %% tab completion: 'opt'
+    B->A: You, Alice?
+  end
+  Note right of C: Carol is the boss
+  C->>A: Get back to work!
+  loop Every hour
+    A->>B: Request 1
+    activate B %% tab completion: 'activate'
+    A-x+B: Request 2
+    B--x-A: Response 2
+    B-->>A: Response 1
+    deactivate B
+  end
 ```
 
 - [x] Preview in browser
