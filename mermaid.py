@@ -23,7 +23,6 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
       <head>
         <meta charset="utf-8">
         <title>Mermaid Viewer: %(title)s</title>
-        <link rel="stylesheet" href="https://unpkg.com/mermaid@7.0.3/dist/mermaid.min.css">
       </head>
       <body style="font-family:'system-ui',sans-serif; text-align:center;">
         <h1>Mermaid Viewer: %(title)s</h1>
@@ -37,7 +36,7 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
           %(mermaid)s
           </div>
         </div>
-        <script src="https://unpkg.com/mermaid@7.0.3/dist/mermaid.min.js"></script>
+        <script src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
         <script>
           mermaid.initialize({ logLevel: 4 });
           setTimeout(() => {
