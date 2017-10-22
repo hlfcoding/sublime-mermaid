@@ -8,46 +8,47 @@ graph TB %% tab completion: 'graph'
 %%  ^ keyword.type.graph.mermaid
 %%    ^ constant.type.graph.mermaid
 %%       ^ punctuation.definition.comment.mermaid
-
-  ID-1[This is the text in the box] %% tab completion: 'node'
+  ID-1[Node 1] %% tab completion: 'node'
 %% <- meta.declaration.node.graph.mermaid
 %%   ^ entity.name.node.graph.mermaid
 %%    ^ keyword.operator.begin.node.graph.mermaid
 %%     ^ string.text.node.graph.mermaid
-%%                                ^ keyword.operator.end.node.graph.mermaid
-%%                                  ^ punctuation.definition.comment.mermaid
-
-  ID-2[This is the text in the box]
+%%           ^ keyword.operator.end.node.graph.mermaid
+%%             ^ punctuation.definition.comment.mermaid
+  ID-2>Node 2]
+  ID-3(Node 3)
   ID-1---ID-2 %% tab completion: 'link'
 %% ^ meta.declaration.link.graph.mermaid
 %%    ^^^ keyword.operator.link.graph.mermaid
 %%            ^ punctuation.definition.comment.mermaid
-  ID-1---This is the link text---ID-2 %% tab completion: 'link'
+  ID-1 --> ID-3 %% tab completion: 'link'
 %% ^ meta.declaration.link.graph.mermaid
-%%    ^^^ keyword.operator.link.graph.mermaid
-%%       ^ string.text.link.graph.mermaid
-%%                            ^^^ keyword.operator.link.graph.mermaid
-%%                                    ^ punctuation.definition.comment.mermaid
-  ID-1-->|This is the link text|ID-2 %% tab completion: 'link'
+%%     ^^^ keyword.operator.link.graph.mermaid
+%%              ^ punctuation.definition.comment.mermaid
+  ID-2--Link between 2 and 3---ID-3 %% tab completion: 'link'
+%% ^ meta.declaration.link.graph.mermaid
+%%    ^^ keyword.operator.link.graph.mermaid
+%%      ^ string.text.link.graph.mermaid
+%%                          ^^^ keyword.operator.link.graph.mermaid
+%%                                  ^ punctuation.definition.comment.mermaid
+  ID-1-->|Action from 1 to 3|ID-3 %% tab completion: 'link'
 %% ^ meta.declaration.link.graph.mermaid
 %%    ^^^ keyword.operator.link.graph.mermaid
 %%       ^ keyword.operator.begin.text.link.graph.mermaid
 %%        ^ string.text.link.graph.mermaid
-%%                             ^ keyword.operator.end.text.link.graph.mermaid
-%%                                   ^ punctuation.definition.comment.mermaid
-  ID-1 --- This is the link text --> ID-2 %% tab completion: 'link'
+%%                          ^ keyword.operator.end.text.link.graph.mermaid
+%%                                ^ punctuation.definition.comment.mermaid
+  ID-3 -- Action from 3 to 2 --> ID-2 %% tab completion: 'link'
 %% ^ meta.declaration.link.graph.mermaid
-%%     ^^^ keyword.operator.link.graph.mermaid
-%%         ^ string.text.link.graph.mermaid
-%%                               ^^^ keyword.operator.link.graph.mermaid
-%%                                        ^ punctuation.definition.comment.mermaid
-
+%%     ^^ keyword.operator.link.graph.mermaid
+%%        ^ string.text.link.graph.mermaid
+%%                           ^^^ keyword.operator.link.graph.mermaid
+%%                                    ^ punctuation.definition.comment.mermaid
   class ID-1 className %% tab completion: 'class'
 %% <- meta.declaration.styling.graph.mermaid
 %% ^ keyword.type.styling.graph.mermaid
 %%           ^ entity.name.styling.graph.mermaid
 %%                     ^ punctuation.definition.comment.mermaid
-
   click ID-1 "https://github.com" "Tooltip text" %% tab completion: 'click'
 %% <- meta.declaration.interaction.graph.mermaid
 %% ^ keyword.type.interaction.graph.mermaid
@@ -60,13 +61,13 @@ graph TB %% tab completion: 'graph'
 %%                                               ^ punctuation.definition.comment.mermaid
   click ID-1 callback "Tooltip for a callback" %% tab completion: 'click'
 %%           ^ entity.name.callback.interaction.graph.mermaid
-
-  subgraph This is the subgraph text
+  subgraph A subgraph
 %% <- meta.declaration.sub.graph.mermaid
 %% ^ keyword.type.begin.sub.graph.mermaid
 %%         ^ string.text.sub.graph.mermaid
-    ID-3[This is the text in the box]
-    ID-2-->ID-3
+    ID-4{Node 4}
+    ID-5((Node 5))
+    ID-2-->ID-4
 %%  ^ meta.declaration.sub.graph.mermaid
 %%      ^^^ keyword.operator.link.graph.mermaid
   end %% tab completion: 'subgraph'

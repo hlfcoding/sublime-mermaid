@@ -7,43 +7,28 @@
 - [x] Flow diagram support, with caveats:
   - Dotted and thick links aren't supported due to their ugliness.
   - Inline node definition isn't supported, plus it does not scale well.
-  - `--` isn't supported, since `---` is more conventional.
   - `style` isn't supported, since `class` (CSS) support is easier.
 
 ![screen-shot](https://user-images.githubusercontent.com/100884/29259374-54e94d34-8077-11e7-91ea-67e92b2ea2d9.png)
 
 ```mermaid
 graph TB %% tab completion: 'graph'
-  ID-1[This is the text in the box] %% tab completion: 'node'
-  ID-2[This is the text in the box]
+  ID-1[Node 1] %% tab completion: 'node'
+  ID-2>Node 2]
+  ID-3(Node 3)
   ID-1---ID-2 %% tab completion: 'link'
-  click ID-1 "http://www.github.com" "Tooltip for a link" %% tab completion: 'click'
-  subgraph This is the subgraph text
-    ID-3[This is the text in the box]
-    ID-2-->ID-3
-  end %% tab completion: 'subgraph'
-
-graph BT %% tab completion: 'graph'
-  ID-1>This is the text in the asymmetric box] %% tab completion: 'node'
-  ID-2>This is the text in the asymmetric box]
-  ID-1 --> ID-2 %% tab completion: 'link'
-  click ID-1 callback "Tooltip for a callback" %% tab completion: 'click'
+  ID-1 --> ID-3
+  ID-2--Link between 2 and 3---ID-3
+  ID-3-->|Action from 3 to 1|ID-1
+  ID-3 -- Action from 3 to 2 --> ID-2
   class ID-1 className %% tab completion: 'class'
-
-graph TD %% tab completion: 'graph'
-  ID-1(This is the text in the rounded box) %% tab completion: 'node'
-  ID-2(This is the text in the rounded box)
-  ID-1---This is the link text---ID-2 %% tab completion: 'link'
-
-graph LR %% tab completion: 'graph'
-  ID-1{This is the text in the rhombus} %% tab completion: 'node'
-  ID-2{This is the text in the rhombus}
-  ID-1-->|This is the link text|ID-2 %% tab completion: 'link'
-
-graph RL %% tab completion: 'graph'
-  ID-1((This is the text in the circle)) %% tab completion: 'node'
-  ID-2((This is the text in the circle))
-  ID-1 --- This is the link text --> ID-2 %% tab completion: 'link'
+  click ID-1 "https://github.com" "Tooltip text" %% tab completion: 'click'
+  click ID-2 callback "Tooltip for a callback"
+  subgraph A subgraph
+    ID-4{Node 4}
+    ID-5((Node 5))
+    ID-4-->ID-5
+  end %% tab completion: 'subgraph'
 
 sequenceDiagram %% tab completion: 'diagram'
   participant A as Alice %% tab completion: 'participant'
