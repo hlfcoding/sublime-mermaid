@@ -120,11 +120,27 @@ sequenceDiagram
   end
   Note right of C: Carol is the boss
   C->>A: Get back to work!
+%% <- meta.declaration.message.diagram.mermaid
+%% ^^^ keyword.operator.message.diagram.mermaid
+%%     ^ keyword.operator.message.diagram.mermaid
+%%       ^ string.text.message.diagram.mermaid
   loop Every hour
     A->>B: Request 1
     activate B
     A-x+B: Request 2
+%% <- meta.declaration.message.diagram.mermaid
+%%   ^^^ keyword.operator.message.diagram.mermaid
+%%       ^ keyword.operator.message.diagram.mermaid
+%%         ^ string.text.message.diagram.mermaid
     B--x-A: Response 2
+%% <- meta.declaration.message.diagram.mermaid
+%%   ^^^^ keyword.operator.message.diagram.mermaid
+%%        ^ keyword.operator.message.diagram.mermaid
+%%          ^ string.text.message.diagram.mermaid
     B-->>A: Response 1
+%% <- meta.declaration.message.diagram.mermaid
+%%   ^^^^ keyword.operator.message.diagram.mermaid
+%%        ^ keyword.operator.message.diagram.mermaid
+%%          ^ string.text.message.diagram.mermaid
     deactivate B
   end

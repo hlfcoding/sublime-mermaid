@@ -109,12 +109,14 @@ contexts:
         - match: $
           pop: true
 
-    - match: ^\s*(participant)\s+
+    - match: ^\s*(participant)\s+({{node}})(?:\s+(as)\s+)?
       captures:
         1: keyword.type.actor.diagram.mermaid
+        2: entity.name.actor.diagram.mermaid
+        3: keyword.operator.alias.actor.diagram.mermaid
       push:
         - meta_scope: meta.declaration.actor.diagram.mermaid
-        - meta_content_scope: entity.name.actor.diagram.mermaid
+        - meta_content_scope: string.text.alias.actor.diagram.mermaid
         - match: $
           pop: true
 
@@ -140,7 +142,7 @@ contexts:
         - match: $
           pop: true
 
-    - match: "{{node_from}}(-?-\\>){{node_to}}(:)"
+    - match: "{{node_from}}(-?-(?:\\>|x)\\>?[+-]?){{node_to}}(:)"
       captures:
         1: keyword.operator.message.diagram.mermaid
         2: keyword.operator.message.diagram.mermaid
