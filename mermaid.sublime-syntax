@@ -24,9 +24,9 @@ contexts:
 
     - include: quoted_string
 
-    - include: graph
-
     - include: diagram
+
+    - include: graph
 
   graph:
     - match: '^\s*(class)\s+{{node}}\s+'
