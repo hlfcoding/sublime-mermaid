@@ -13,7 +13,6 @@
 ![screen-shot](https://user-images.githubusercontent.com/100884/29259374-54e94d34-8077-11e7-91ea-67e92b2ea2d9.png)
 
 ```mermaid
-%% Example code
 graph TB %% tab completion: 'graph'
   ID-1[This is the text in the box] %% tab completion: 'node'
   ID-2[This is the text in the box]
@@ -24,7 +23,6 @@ graph TB %% tab completion: 'graph'
     ID-2-->ID-3
   end %% tab completion: 'subgraph'
 
-%% Example code
 graph BT %% tab completion: 'graph'
   ID-1>This is the text in the asymmetric box] %% tab completion: 'node'
   ID-2>This is the text in the asymmetric box]
@@ -32,19 +30,16 @@ graph BT %% tab completion: 'graph'
   click ID-1 callback "Tooltip for a callback" %% tab completion: 'click'
   class ID-1 className %% tab completion: 'class'
 
-%% Example code
 graph TD %% tab completion: 'graph'
   ID-1(This is the text in the rounded box) %% tab completion: 'node'
   ID-2(This is the text in the rounded box)
   ID-1---This is the link text---ID-2 %% tab completion: 'link'
 
-%% Example code
 graph LR %% tab completion: 'graph'
   ID-1{This is the text in the rhombus} %% tab completion: 'node'
   ID-2{This is the text in the rhombus}
   ID-1-->|This is the link text|ID-2 %% tab completion: 'link'
 
-%% Example code
 graph RL %% tab completion: 'graph'
   ID-1((This is the text in the circle)) %% tab completion: 'node'
   ID-2((This is the text in the circle))
@@ -60,14 +55,14 @@ sequenceDiagram %% tab completion: 'diagram'
     B->B: Bob checks himself...
   end %% tab completion: 'loop'
   Note over B: Bob whispers when sick
-  alt is sick %% tab completion: 'alt'
+  alt is sick
     B-->A: Not so good :(
   else is well
     B->A: Feeling fresh like a daisy
-  end
-  opt Extra response %% tab completion: 'opt'
+  end %% tab completion: 'alt'
+  opt Extra response
     B->A: You, Alice?
-  end
+  end %% tab completion: 'opt'
   Note right of C: Carol is the boss
   C->>A: Get back to work!
   loop Every hour
