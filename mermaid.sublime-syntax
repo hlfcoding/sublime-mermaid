@@ -120,6 +120,14 @@ contexts:
         - match: $
           pop: true
 
+    - match: ^\s*((?:de)?activate)\s+{{node}}
+      captures:
+        1: keyword.type.activation.diagram.mermaid
+      push:
+        - meta_scope: meta.declaration.activation.diagram.mermaid
+        - match: $
+          pop: true
+
     - match: ^\s*(loop)\s+({{text}})$
       captures:
         1: keyword.type.begin.loop.diagram.mermaid
@@ -129,6 +137,32 @@ contexts:
         - include: diagram
         - match: ^\s*end\b
           scope: keyword.type.end.loop.diagram.mermaid
+          pop: true
+
+    - match: ^\s*(alt)\s+({{text}})$
+      captures:
+        1: keyword.type.begin.alternative-path.diagram.mermaid
+        2: string.text.alternative-path.diagram.mermaid
+      push:
+        - meta_scope: meta.declaration.alternative-path.diagram.mermaid
+        - include: diagram
+        - match: ^\s*(else)(?:\s+({{text}}))$
+          captures:
+            1: keyword.operator.alternative-path.diagram.mermaid
+            2: string.text.alternative-path.diagram.mermaid
+        - match: ^\s*end\b
+          scope: keyword.type.end.alternative-path.diagram.mermaid
+          pop: true
+
+    - match: ^\s*(opt)\s+({{text}})$
+      captures:
+        1: keyword.type.begin.optional-path.diagram.mermaid
+        2: string.text.optional-path.diagram.mermaid
+      push:
+        - meta_scope: meta.declaration.optional-path.diagram.mermaid
+        - include: diagram
+        - match: ^\s*end\b
+          scope: keyword.type.end.optional-path.diagram.mermaid
           pop: true
 
     - match: ^\s*(Note)\s+((?:left|right)\sof|over)\s+{{node}}(:)

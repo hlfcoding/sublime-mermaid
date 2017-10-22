@@ -111,13 +111,25 @@ sequenceDiagram
 %% ^ keyword.type.end.loop.diagram.mermaid
   Note over B: Bob whispers when sick
   alt is sick
+%% <- meta.declaration.alternative-path.diagram.mermaid
+%% ^ keyword.type.begin.alternative-path.diagram.mermaid
+%%     ^ string.text.alternative-path.diagram.mermaid
     B-->A: Not so good :(
   else is well
+%% ^ keyword.operator.alternative-path.diagram.mermaid
+%%     ^ string.text.alternative-path.diagram.mermaid
     B->A: Feeling fresh like a daisy
   end
+%% <- meta.declaration.alternative-path.diagram.mermaid
+%% ^ keyword.type.end.alternative-path.diagram.mermaid
   opt Extra response
+%% <- meta.declaration.optional-path.diagram.mermaid
+%% ^ keyword.type.begin.optional-path.diagram.mermaid
+%%     ^ string.text.optional-path.diagram.mermaid
     B->A: You, Alice?
   end
+%% <- meta.declaration.optional-path.diagram.mermaid
+%% ^ keyword.type.end.optional-path.diagram.mermaid
   Note right of C: Carol is the boss
   C->>A: Get back to work!
 %% <- meta.declaration.message.diagram.mermaid
@@ -127,6 +139,8 @@ sequenceDiagram
   loop Every hour
     A->>B: Request 1
     activate B
+%% <- meta.declaration.activation.diagram.mermaid
+%%  ^ keyword.type.activation.diagram.mermaid
     A-x+B: Request 2
 %% <- meta.declaration.message.diagram.mermaid
 %%   ^^^ keyword.operator.message.diagram.mermaid
@@ -143,4 +157,6 @@ sequenceDiagram
 %%        ^ keyword.operator.message.diagram.mermaid
 %%          ^ string.text.message.diagram.mermaid
     deactivate B
+%% <- meta.declaration.activation.diagram.mermaid
+%%  ^ keyword.type.activation.diagram.mermaid
   end
