@@ -74,38 +74,57 @@ graph TB %% tab completion: 'graph'
 %% ^ keyword.type.end.sub.graph.mermaid
 %%    ^ punctuation.definition.comment.mermaid
 
-sequenceDiagram %% tab completion: 'sequenceDiagram'
+sequenceDiagram
 %% <- meta.declaration.diagram.mermaid
 %% ^ keyword.type.diagram.mermaid
-  participant Alice
+  participant A as Alice
 %% ^ keyword.type.actor.diagram.mermaid
 %% <- meta.declaration.actor.diagram.mermaid
 %%            ^ entity.name.actor.diagram.mermaid
-  participant Bob
-  Alice->John: Hello John, how are you?
+%%              ^^ keyword.operator.alias.actor.diagram.mermaid
+%%                 ^ string.text.alias.actor.diagram.mermaid
+  participant B as Bob
+  participant C as Carol
+  Note left of A: Alice likes to chat
+%% <- meta.declaration.note.diagram.mermaid
+%% ^ keyword.type.note.diagram.mermaid
+%%     ^ constant.type.note.diagram.mermaid
+%%          ^ constant.type.note.diagram.mermaid
+%%              ^ keyword.operator.note.diagram.mermaid
+%%                ^ string.text.note.diagram.mermaid
+  A->B: Hello Bob, how are you?
 %% <- meta.declaration.message.diagram.mermaid
-%%     ^^ keyword.operator.message.diagram.mermaid
-%%           ^ keyword.operator.message.diagram.mermaid
-%%             ^ string.text.message.diagram.mermaid
+%% ^^ keyword.operator.message.diagram.mermaid
+%%    ^ keyword.operator.message.diagram.mermaid
+%%      ^ string.text.message.diagram.mermaid
   loop Healthcheck
 %% <- meta.declaration.loop.diagram.mermaid
 %% ^ keyword.type.begin.loop.diagram.mermaid
 %%     ^ string.text.loop.diagram.mermaid
-      John->John: Fight against hypochondria
+    B->B: Bob checks himself...
 %% <- meta.declaration.message.diagram.mermaid
-%%        ^^ keyword.operator.message.diagram.mermaid
-%%              ^ keyword.operator.message.diagram.mermaid
-%%                ^ string.text.message.diagram.mermaid
+%%   ^^ keyword.operator.message.diagram.mermaid
+%%      ^ keyword.operator.message.diagram.mermaid
+%%        ^ string.text.message.diagram.mermaid
   end
 %% <- meta.declaration.loop.diagram.mermaid
 %% ^ keyword.type.end.loop.diagram.mermaid
-  Note right of John: Rational thoughts <br/>prevail...
-%% <- meta.declaration.note.diagram.mermaid
-%% ^ keyword.type.note.diagram.mermaid
-%%     ^ constant.type.note.diagram.mermaid
-%%           ^ constant.type.note.diagram.mermaid
-%%                  ^ keyword.operator.note.diagram.mermaid
-%%                    ^ string.text.note.diagram.mermaid
-  John-->Alice: Great!
-  John->Bob: How about you?
-  Bob-->John: Jolly good!
+  Note over B: Bob whispers when sick
+  alt is sick
+    B-->A: Not so good :(
+  else is well
+    B->A: Feeling fresh like a daisy
+  end
+  opt Extra response
+    B->A: You, Alice?
+  end
+  Note right of C: Carol is the boss
+  C->>A: Get back to work!
+  loop Every hour
+    A->>B: Request 1
+    activate B
+    A-x+B: Request 2
+    B--x-A: Response 2
+    B-->>A: Response 1
+    deactivate B
+  end
