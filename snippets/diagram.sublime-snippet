@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[sequenceDiagram]]></content>
+  <tabTrigger>diagram</tabTrigger>
+  <scope>source.mermaid</scope>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[opt ${1:Text}
+	${2}
+end
+]]></content>
+  <tabTrigger>opt </tabTrigger>
+  <scope>source.mermaid</scope>
+</snippet>

@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[participant ${1:ID}${2: as ${3:name}}]]></content>
+  <tabTrigger>participant</tabTrigger>
+  <scope>source.mermaid</scope>
+</snippet>

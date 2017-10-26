@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[${2:de}activate ${1:ID}]]></content>
+  <tabTrigger>activate</tabTrigger>
+  <scope>source.mermaid</scope>
+</snippet>

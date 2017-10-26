@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[loop ${1:Text}
+	${2}
+end
+]]></content>
+  <tabTrigger>loop</tabTrigger>
+  <scope>source.mermaid</scope>
+</snippet>

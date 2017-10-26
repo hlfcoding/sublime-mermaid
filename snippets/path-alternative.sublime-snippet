@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[alt ${1:text}
+	${3}
+else ${2:text}
+	${4}
+end
+]]></content>
+  <tabTrigger>alt</tabTrigger>
+  <scope>source.mermaid</scope>
+</snippet>
