@@ -35,7 +35,7 @@ sequenceDiagram %% tab completion: 'diagram'
   participant B as Bob
   participant C as Carol
   Note left of A: Alice likes to chat %% tab completion: 'note'
-  A->B: Hello Bob, how are you? %% tab completion: 'message'
+  A->B: Hello Bob, how are you? %% tab completion: 'msg'
   loop Healthcheck
     B->B: Bob checks himself...
   end %% tab completion: 'loop'
