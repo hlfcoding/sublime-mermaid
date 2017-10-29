@@ -5,7 +5,6 @@
 [Install Mermaid][] from [Package Control][].
 
 - [x] Flow diagram support, with caveats:
-  - Dotted and thick links aren't supported due to their ugliness.
   - Inline node definition isn't supported, plus it does not scale well.
   - `style` isn't supported, since `class` (CSS) support is easier.
 
@@ -21,15 +20,25 @@ graph TB %% tab completion: 'graph'
   ID-2--Link between 2 and 3---ID-3
   ID-3-->|Action from 3 to 1|ID-1
   ID-3 -- Action from 3 to 2 --> ID-2
-  class ID-1 className %% tab completion: 'class'
-  click ID-1 "https://github.com" "Tooltip text" %% tab completion: 'click'
-  click ID-2 callback "Tooltip for a callback"
+  classDef blue fill:#08f,stroke:#fff
+  class ID-1 blue %% tab completion: 'class'
+  %% tab completion: 'click'
+  click ID-1 "https://github.com" "Tooltip text"
+  click ID-2 alert "Tooltip for a callback"
   subgraph A subgraph
     ID-4{Node 4}
-    ID-5((Node 5))
-    ID-4-->ID-5
+    ID-5((fa:fa-spinner))
+    ID-6["Node 6 (same #quot;shape#quot;)"]
+    ID-4-.->ID-5
+    ID-5 -. Action from 5 to 4 .-> ID-4
+    ID-5==>ID-6
+    ID-6 == Action from 6 to 5 ==> ID-5
   end %% tab completion: 'subgraph'
+```
 
+- [x] Sequence diagram support
+
+```mermaid
 sequenceDiagram %% tab completion: 'diagram'
   participant A as Alice %% tab completion: 'participant'
   participant B as Bob
@@ -70,7 +79,6 @@ sequenceDiagram %% tab completion: 'diagram'
 
 ![screen-shot](https://user-images.githubusercontent.com/100884/29259302-8ba6ba24-8076-11e7-996c-18cad5df138f.png)
 
-- [ ] Sequence diagram support
 - [ ] Gantt diagram support
 - [ ] Windows support
 - [ ] Linux support

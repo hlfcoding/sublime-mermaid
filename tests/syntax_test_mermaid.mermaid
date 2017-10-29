@@ -44,11 +44,12 @@ graph TB %% tab completion: 'graph'
 %%        ^ string.text.link.graph.mermaid
 %%                           ^^^ keyword.operator.link.graph.mermaid
 %%                                    ^ punctuation.definition.comment.mermaid
-  class ID-1 className %% tab completion: 'class'
+  classDef blue fill:#08f,stroke:#fff
+  class ID-1 blue %% tab completion: 'class'
 %% <- meta.declaration.styling.graph.mermaid
 %% ^ keyword.type.styling.graph.mermaid
 %%           ^ entity.name.styling.graph.mermaid
-%%                     ^ punctuation.definition.comment.mermaid
+%%                ^ punctuation.definition.comment.mermaid
   click ID-1 "https://github.com" "Tooltip text" %% tab completion: 'click'
 %% <- meta.declaration.interaction.graph.mermaid
 %% ^ keyword.type.interaction.graph.mermaid
@@ -59,17 +60,20 @@ graph TB %% tab completion: 'graph'
 %%                                 ^ string.quoted.double.mermaid
 %%                                             ^ punctuation.definition.string.end.mermaid
 %%                                               ^ punctuation.definition.comment.mermaid
-  click ID-1 callback "Tooltip for a callback" %% tab completion: 'click'
+  click ID-1 alert "Tooltip for a callback" %% tab completion: 'click'
 %%           ^ entity.name.callback.interaction.graph.mermaid
   subgraph A subgraph
 %% <- meta.declaration.sub.graph.mermaid
 %% ^ keyword.type.begin.sub.graph.mermaid
 %%         ^ string.text.sub.graph.mermaid
     ID-4{Node 4}
-    ID-5((Node 5))
-    ID-2-->ID-4
+    ID-5((fa:fa-spinner))
+    ID-6["Node 6 (same #quot;shape#quot;)"]
+    ID-4-.->ID-5
+    ID-5 -. Action from 5 to 4 .-> ID-4
+    ID-5==>ID-6
+    ID-6 == Action from 6 to 5 ==> ID-5
 %%  ^ meta.declaration.sub.graph.mermaid
-%%      ^^^ keyword.operator.link.graph.mermaid
   end %% tab completion: 'subgraph'
 %% <- meta.declaration.sub.graph.mermaid
 %% ^ keyword.type.end.sub.graph.mermaid
