@@ -29,7 +29,7 @@ contexts:
     - include: graph
 
   graph:
-    - match: '^\s*(class)\s+{{entity}}\s+'
+    - match: ^\s*(class)\s+{{entity}}\s+
       captures:
         1: keyword.type.styling.graph.mermaid
       push:
@@ -39,7 +39,7 @@ contexts:
         - match: $
           pop: true
 
-    - match: '^\s*(click)\s+{{entity}}\s+'
+    - match: ^\s*(click)\s+{{entity}}\s+
       captures:
         1: keyword.type.interaction.graph.mermaid
       push:
