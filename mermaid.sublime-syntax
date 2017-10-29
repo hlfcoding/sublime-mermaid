@@ -6,7 +6,7 @@ file_extensions:
   - mermaid
 scope: source.mermaid
 variables:
-  graph_link: -?-(?:-|\>)
+  graph_link: (?:-?-(?:-|\>)|=?=(?:=|\>)|(?:\.-|-\.)-?\>?)
   entity: \b[-\w]+\b
   entity_from: \b{{entity}}\s?
   entity_to: \s?{{entity}}\b

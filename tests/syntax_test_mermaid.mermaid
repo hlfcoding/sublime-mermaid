@@ -70,9 +70,15 @@ graph TB %% tab completion: 'graph'
     ID-5((fa:fa-spinner))
     ID-6["Node 6 (same #quot;shape#quot;)"]
     ID-4-.->ID-5
+%%      ^^^^ keyword.operator.link.graph.mermaid
     ID-5 -. Action from 5 to 4 .-> ID-4
+%%       ^^ keyword.operator.link.graph.mermaid
+%%                             ^^^ keyword.operator.link.graph.mermaid
     ID-5==>ID-6
+%%      ^^^ keyword.operator.link.graph.mermaid
     ID-6 == Action from 6 to 5 ==> ID-5
+%%       ^^ keyword.operator.link.graph.mermaid
+%%                             ^^^ keyword.operator.link.graph.mermaid
 %%  ^ meta.declaration.sub.graph.mermaid
   end %% tab completion: 'subgraph'
 %% <- meta.declaration.sub.graph.mermaid
