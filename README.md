@@ -4,7 +4,7 @@
 
 [Install Mermaid][] from [Package Control][].
 
-- [x] Flow diagram support, with caveats:
+- [x] [Flow diagram][] support, with caveats:
   - Inline node definition isn't supported, plus it does not scale well.
   - `style` isn't supported, since `class` (CSS) support is easier.
 
@@ -36,7 +36,7 @@ graph TB %% tab completion: 'graph'
   end %% tab completion: 'subgraph'
 ```
 
-- [x] Sequence diagram support
+- [x] [Sequence diagram][] support
 
 ```mermaid
 sequenceDiagram %% tab completion: 'diagram'
@@ -85,6 +85,8 @@ sequenceDiagram %% tab completion: 'diagram'
 
 [Sublime Text 3]: http://www.sublimetext.com
 [Mermaid]: http://knsv.github.io/mermaid
+[Flow diagram]: https://mermaidjs.github.io/flowchart.html
+[Sequence diagram]: https://mermaidjs.github.io/sequenceDiagram.html
 [Install Mermaid]: https://packagecontrol.io/packages/Mermaid
 [Package Control]: https://packagecontrol.io
 
