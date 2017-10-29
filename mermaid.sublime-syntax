@@ -35,7 +35,17 @@ contexts:
       push:
         - meta_scope: meta.declaration.styling.graph.mermaid
         - match: \b\w+\b
-          scope: entity.name.styling.graph.mermaid
+          scope: support.name.styling.graph.mermaid
+        - match: $
+          pop: true
+
+    - match: ^\s*(classDef)\s+({{entity}})\s+
+      captures:
+        1: keyword.type.styling.graph.mermaid
+        2: entity.name.styling.graph.mermaid
+      push:
+        - meta_scope: meta.declaration.styling.graph.mermaid
+        - meta_content_scope: string.text.styling.graph.mermaid
         - match: $
           pop: true
 
