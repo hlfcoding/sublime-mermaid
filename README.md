@@ -20,8 +20,9 @@ graph TB %% tab completion: 'graph'
   ID-2--Link between 2 and 3---ID-3
   ID-3-->|Action from 3 to 1|ID-1
   ID-3 -- Action from 3 to 2 --> ID-2
+  %% tab completion: 'class'
   classDef blue fill:#08f,stroke:#fff
-  class ID-1 blue %% tab completion: 'class'
+  class ID-1 blue
   %% tab completion: 'click'
   click ID-1 "https://github.com" "Tooltip text"
   click ID-2 alert "Tooltip for a callback"
