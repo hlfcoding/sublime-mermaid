@@ -41,11 +41,14 @@ graph TB %% tab completion: 'graph'
 
 ```mermaid
 sequenceDiagram %% tab completion: 'diagram'
-  participant A as Alice %% tab completion: 'participant'
+  %% tab completion: 'participant'
+  participant A as Alice
   participant B as Bob
   participant C as Carol
-  Note left of A: Alice likes to chat %% tab completion: 'note'
-  A->B: Hello Bob, how are you? %% tab completion: 'msg'
+  %% tab completion: 'note'
+  Note left of A: Alice likes to chat
+  %% tab completion: 'msg'
+  A->B: Hello Bob, how are you?
   loop Healthcheck
     B->B: Bob checks himself...
   end %% tab completion: 'loop'
@@ -62,7 +65,8 @@ sequenceDiagram %% tab completion: 'diagram'
   C->>A: Get back to work!
   loop Every hour
     A->>B: Request 1
-    activate B %% tab completion: 'activate'
+    %% tab completion: 'activate'
+    activate B
     A-x+B: Request 2
     B--x-A: Response 2
     B-->>A: Response 1
