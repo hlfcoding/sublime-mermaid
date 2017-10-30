@@ -8,7 +8,9 @@
   - Inline node definition isn't supported, plus it does not scale well.
   - `style` isn't supported, since `class` (CSS) support is easier.
 
-![screen-shot](https://user-images.githubusercontent.com/100884/29259374-54e94d34-8077-11e7-91ea-67e92b2ea2d9.png)
+![screen-shot](https://user-images.githubusercontent.com/100884/32150205-087a7d82-bccd-11e7-829f-439cd669948e.png)
+
+![screen-shot](https://user-images.githubusercontent.com/100884/32150207-08af2b18-bccd-11e7-9ea8-b3263f6ac23d.png)
 
 ```mermaid
 graph TB %% tab completion: 'graph'
@@ -38,6 +40,10 @@ graph TB %% tab completion: 'graph'
 ```
 
 - [x] [Sequence diagram][] support
+
+![screen-shot](https://user-images.githubusercontent.com/100884/32150206-0895ab7a-bccd-11e7-8824-ed71501e8e01.png)
+
+![screen-shot](https://user-images.githubusercontent.com/100884/32150208-08c92338-bccd-11e7-8402-284674c0cbb6.png)
 
 ```mermaid
 sequenceDiagram %% tab completion: 'diagram'
@@ -81,8 +87,6 @@ sequenceDiagram %% tab completion: 'diagram'
 - [x] Exporting, with caveats:
   - PNG conversion from SVG conflicts with opening file-URL's, so it's a link.
   - Converted SVG may be missing some styling.
-
-![screen-shot](https://user-images.githubusercontent.com/100884/29259302-8ba6ba24-8076-11e7-996c-18cad5df138f.png)
 
 - [ ] Gantt diagram support
 - [ ] Windows support
