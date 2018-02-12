@@ -10,7 +10,7 @@ variables:
   entity: \b[-\w]+\b
   entity_from: \b{{entity}}\s?
   entity_to: \s?{{entity}}\b
-  text: \b[-\w\s]+\b
+  text: \b[-:,.\w\s]+\b
 contexts:
   prototype:
     - include: line_comment
