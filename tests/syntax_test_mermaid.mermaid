@@ -38,11 +38,11 @@ graph TB %% tab completion: 'graph'
 %%        ^ string.text.link.graph.mermaid
 %%                          ^ keyword.operator.end.text.link.graph.mermaid
 %%                                ^ punctuation.definition.comment.mermaid
-  ID-3 -- Action from 3 to 2. But note: this, and that --> ID-2 %% tab completion: 'link'
+  ID-3 -- Action from 3 to 2. But note: X, Y -- and Z --> ID-2 %% tab completion: 'link'
 %% ^ meta.declaration.link.graph.mermaid
 %%     ^^ keyword.operator.link.graph.mermaid
 %%        ^ string.text.link.graph.mermaid
-%%                                                     ^^^ keyword.operator.link.graph.mermaid
+%%                                                    ^^^ keyword.operator.link.graph.mermaid
 %%                                                              ^ punctuation.definition.comment.mermaid
   classDef blue fill:#08f,stroke:#fff %% tab completion: 'class'
 %% <- meta.declaration.styling.graph.mermaid
