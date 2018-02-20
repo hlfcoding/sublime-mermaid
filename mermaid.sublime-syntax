@@ -107,7 +107,7 @@ contexts:
       push:
         - meta_scope: meta.declaration.node.graph.mermaid
         - meta_content_scope: string.text.node.graph.mermaid
-        - match: (\]|\)+|\})(\b|\s)
+        - match: (\]|\)+|\})(\b|\s|$)
           captures:
             1: keyword.operator.end.node.graph.mermaid
           pop: true
