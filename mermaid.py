@@ -23,15 +23,36 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
       <head>
         <meta charset="utf-8">
         <title>Mermaid Viewer: %(title)s</title>
+        <style>
+          .info > * {
+            box-sizing: border-box;
+            display: inline-block;
+            font-size: 1rem;
+            margin: 0;
+            padding: 0.5rem;
+            text-decoration: none;
+          }
+        </style>
       </head>
       <body style="font-family:'system-ui',sans-serif; text-align:center;">
-        <h1>Mermaid Viewer: %(title)s</h1>
-        <div style="overflow:auto;">
-          <nav>
-            <a href="data:image/svg+xml;base64," download="%(title)s.svg">Save as SVG</a>
-            &middot;
-            <a href="http://svgtopng.com" target="_blank">Save as PNG</a>
-          </nav>
+        <div class="info" style="border:1px solid; font-size:0; float:left;">
+          <h1 style="border-bottom:1px solid; display:block;">
+            Mermaid Viewer: %(title)s
+          </h1>
+          <a
+            href="data:image/svg+xml;base64," download="%(title)s.svg"
+            style="border-right:1px solid; width:50%%;"
+          >
+            Save as SVG
+          </a>
+          <a
+            href="http://svgtopng.com" target="_blank"
+            style="width:50%%;"
+          >
+            Save as PNG
+          </a>
+        </div>
+        <div style="overflow:auto; clear:left;">
           <div class="mermaid">
           %(mermaid)s
           </div>
