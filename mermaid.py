@@ -31,6 +31,7 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
             margin: 0;
             padding: 0.5rem;
             text-decoration: none;
+            white-space: nowrap;
           }
         </style>
       </head>
