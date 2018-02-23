@@ -35,10 +35,11 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
           }
         </style>
       </head>
-      <body style="font-family:'system-ui',sans-serif; text-align:center;">
-        <div class="info" style="border:1px solid; font-size:0; float:left;">
+      <body style="font-family:'system-ui',sans-serif; margin:0; text-align:center;">
+        <div class="info" style="border:1px solid; font-size:0; float:left; margin:1rem;">
           <h1 style="border-bottom:1px solid; display:block;">
-            Mermaid Viewer: %(title)s
+            <span style="font-weight:normal;">Mermaid Viewer &middot;</span>
+            %(title)s
           </h1>
           <a
             href="data:image/svg+xml;base64," download="%(title)s.svg"
