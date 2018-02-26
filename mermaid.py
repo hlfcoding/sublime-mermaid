@@ -54,7 +54,7 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
             Save as PNG
           </a>
         </div>
-        <div style="overflow:auto; clear:left;">
+        <div class="canvas" style="overflow:auto; clear:left; visibility:hidden;">
           <div class="mermaid">
           %(mermaid)s
           </div>
@@ -63,6 +63,9 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
         <script>
           mermaid.initialize({ logLevel: 4 });
           setTimeout(() => {
+            let style = document.querySelector('.mermaid > svg').style;
+            style.width = style.maxWidth; style.maxWidth = 'none';
+            document.querySelector('.canvas').style.visibility = 'visible';
             document.querySelector('a[download]').href +=
             btoa(document.querySelector('svg').outerHTML);
           }, 1000);
