@@ -35,8 +35,14 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
           }
         </style>
       </head>
-      <body style="font-family:'system-ui',sans-serif; margin:0; text-align:center;">
-        <div class="info" style="border:1px solid; font-size:0; float:left; margin:1rem;">
+      <body style="
+        font-family:'system-ui',sans-serif;
+        margin:0; overflow:hidden; text-align:center;
+      ">
+        <div class="info" style="
+          background:rgba(255,255,255, 0.8); border:1px solid; font-size:0;
+          box-sizing:border-box; height:71px; margin:1rem; position:fixed;
+        ">
           <h1 style="border-bottom:1px solid; display:block;">
             <span style="font-weight:normal;">Mermaid Viewer &middot;</span>
             %(title)s
@@ -54,7 +60,10 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
             Save as PNG
           </a>
         </div>
-        <div class="canvas" style="overflow:auto; clear:left; visibility:hidden;">
+        <div class="canvas" style="
+          box-sizing:border-box; height:100vh; overflow:auto;
+          padding-top:calc(71px + 1rem); visibility:hidden;
+        ">
           <div class="mermaid">
           %(mermaid)s
           </div>
