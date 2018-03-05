@@ -8,9 +8,9 @@
   - Inline node definition isn't supported, plus it does not scale well.
   - `style` isn't supported, since `class` (CSS) support is easier.
 
-![screen-shot](https://user-images.githubusercontent.com/100884/32150205-087a7d82-bccd-11e7-829f-439cd669948e.png)
+![screen-shot](https://user-images.githubusercontent.com/100884/37049332-71bfaabc-2125-11e8-8ec3-0202e925a494.png)
 
-![screen-shot](https://user-images.githubusercontent.com/100884/32150207-08af2b18-bccd-11e7-9ea8-b3263f6ac23d.png)
+![screen-shot](https://user-images.githubusercontent.com/100884/37049872-28bf2fe8-2127-11e8-90fa-ff33fab47ed8.png)
 
 ```mermaid
 graph TB %% tab completion: 'graph'
@@ -41,7 +41,7 @@ graph TB %% tab completion: 'graph'
 
 - [x] [Sequence diagram][] support
 
-![screen-shot](https://user-images.githubusercontent.com/100884/32150206-0895ab7a-bccd-11e7-8824-ed71501e8e01.png)
+![screen-shot](https://user-images.githubusercontent.com/100884/37049543-fbfe0d68-2125-11e8-83a7-66fada3c8a49.png)
 
 ![screen-shot](https://user-images.githubusercontent.com/100884/32150208-08c92338-bccd-11e7-8402-284674c0cbb6.png)
 
