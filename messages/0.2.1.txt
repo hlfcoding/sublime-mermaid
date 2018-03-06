@@ -1,0 +1,10 @@
+Mermaid
+-------
+
+- Add syntax support for most symbols in link text
+- Fix graph node syntax when last line and no comment
+- Fix view-in-browser to not down-scale width to fit
+- Minor mermaid version upgrade
+- Redesign info elements in view-in-browser
+
+As always, issues and pull requests are welcomed.
