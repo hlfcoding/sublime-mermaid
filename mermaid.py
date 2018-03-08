@@ -60,9 +60,9 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
             Save as PNG
           </a>
         </div>
-        <div class="canvas" style="
+        <div style="
           box-sizing:border-box; height:100vh; overflow:auto;
-          padding-top:calc(71px + 1rem); visibility:hidden;
+          padding-top:calc(71px + 1rem);
         ">
           <div class="mermaid">
           %(mermaid)s
@@ -70,11 +70,11 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
         </div>
         <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
         <script>
-          mermaid.initialize({ logLevel: 4 });
+          mermaid.initialize({
+            flowchart: { useMaxWidth: false },
+            logLevel: 4,
+          });
           setTimeout(() => {
-            let style = document.querySelector('.mermaid > svg').style;
-            style.width = style.maxWidth; style.maxWidth = 'none';
-            document.querySelector('.canvas').style.visibility = 'visible';
             document.querySelector('a[download]').href +=
             btoa(document.querySelector('svg').outerHTML);
           }, 1000);
