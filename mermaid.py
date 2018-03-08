@@ -73,6 +73,7 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
           mermaid.initialize({
             flowchart: { useMaxWidth: false },
             logLevel: 4,
+            theme: 'neutral',
           });
           setTimeout(() => {
             document.querySelector('a[download]').href +=
