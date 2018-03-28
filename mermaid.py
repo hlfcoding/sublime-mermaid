@@ -12,7 +12,11 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
     region = selection[0] if selection[0].size() else sublime.Region(0, view.size())
     mermaid = view.substr(region)
     with open(pathname, mode='w', encoding='utf-8') as f:
-      f.write(self.html({ 'mermaid': mermaid, 'title': title }))
+      f.write(self.html({
+        'mermaid': mermaid,
+        'title': title,
+        'theme': sublime.load_settings('mermaid.sublime-settings').get('theme')
+      }))
     url = "file://%s" % pathname.replace(" ", "%20").replace("(", "%28").replace(")", "%29")
     webbrowser.get(using='safari').open_new_tab(url)
 
@@ -75,7 +79,7 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
           mermaid.initialize({
             flowchart: { useMaxWidth: false },
             logLevel: 4,
-            theme: 'neutral',
+            theme: '%(theme)s',
           });
           setTimeout(() => {
             document.querySelector('a[download]').href +=

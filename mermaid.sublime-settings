@@ -1,0 +1,8 @@
+//
+// Default values for mermaid.sublime-settings.
+//
+{
+  // The theme to use for view-in-browser.
+  // Available: dark, default, forest, neutral.
+  "theme": "neutral"
+}
