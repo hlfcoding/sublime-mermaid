@@ -1,0 +1,10 @@
+Mermaid
+-------
+
+- Add click-github-repo graph snippet
+- Allow view-in-browser theme to be configurable
+- Tweak view-in-browser theme; h/t knsv/mermaid@a6f992c
+- Tweak view-in-browser links to be more visible
+- Fix view-in-browser to not down-scale width to fit
+
+As always, issues and pull requests are welcomed.
