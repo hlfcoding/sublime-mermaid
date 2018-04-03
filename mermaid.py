@@ -38,8 +38,8 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
             text-decoration: none;
             white-space: nowrap;
           }
-          svg .edgePath .path { stroke: rgba(0,0,0, 0.5); }
-          svg .edgePath .path:hover { stroke: black; }
+          svg .edgePath:not(:hover) path.arrowheadPath { fill-opacity: 0.3; }
+          svg .edgePath:not(:hover) .path { stroke-opacity: 0.3; }
         </style>
       </head>
       <body style="
