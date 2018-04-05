@@ -21,6 +21,12 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
     webbrowser.get(using='safari').open_new_tab(url)
 
   def html(self, parameters):
+    parameters['quiet_links_style'] = ''
+    if parameters['settings'].get('quiet_graph_links'):
+      parameters['quiet_links_style'] = textwrap.indent("""
+      svg .edgePath:not(:hover) path.arrowheadPath { fill-opacity: 0.3; }
+      svg .edgePath:not(:hover) .path { stroke-opacity: 0.3; }
+      """, ' ' * 4)
     parameters['theme'] = parameters['settings'].get('theme')
     return textwrap.dedent("""
     <!doctype html>
@@ -38,8 +44,7 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
             text-decoration: none;
             white-space: nowrap;
           }
-          svg .edgePath:not(:hover) path.arrowheadPath { fill-opacity: 0.3; }
-          svg .edgePath:not(:hover) .path { stroke-opacity: 0.3; }
+          %(quiet_links_style)s
         </style>
       </head>
       <body style="
