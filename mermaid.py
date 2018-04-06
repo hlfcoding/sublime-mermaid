@@ -17,10 +17,11 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
         'settings': sublime.load_settings('mermaid.sublime-settings'),
         'title': title
       }))
-    url = "file://%s" % pathname.replace(" ", "%20").replace("(", "%28").replace(")", "%29")
+    url = 'file://%s' % pathname.replace(' ', '%20').replace('(', '%28').replace(')', '%29')
     webbrowser.get(using='safari').open_new_tab(url)
 
   def html(self, parameters):
+    parameters['mermaid'] = textwrap.indent(parameters['mermaid'], ' ' * 10)
     parameters['quiet_links_style'] = ''
     if parameters['settings'].get('quiet_graph_links'):
       parameters['quiet_links_style'] = textwrap.indent("""
@@ -77,7 +78,7 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
           padding-top:calc(71px + 1rem);
         ">
           <div class="mermaid">
-          %(mermaid)s
+%(mermaid)s
           </div>
         </div>
         <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
