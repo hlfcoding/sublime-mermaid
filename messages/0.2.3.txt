@@ -1,0 +1,8 @@
+Mermaid
+-------
+
+- Allow view-in-browser theme to be configurable (fix)
+- Tweak view-in-browser links to be more visible (fix)
+  Make configurable
+
+As always, issues and pull requests are welcomed.
