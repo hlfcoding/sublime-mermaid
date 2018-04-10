@@ -1,6 +1,3 @@
-Mermaid
--------
-
 - Add click-github-repo graph snippet
 - Allow view-in-browser theme to be configurable
 - Tweak view-in-browser theme; h/t knsv/mermaid@a6f992c

@@ -1,6 +1,3 @@
-Mermaid
--------
-
 Added support for sequence-diagrams. Improved support for graphs (flow-charts).
 
 As always, issues and pull requests are welcomed.

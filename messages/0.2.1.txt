@@ -1,6 +1,3 @@
-Mermaid
--------
-
 - Add syntax support for most symbols in link text
 - Fix graph node syntax when last line and no comment
 - Fix view-in-browser to not down-scale width to fit
