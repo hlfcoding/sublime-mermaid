@@ -83,6 +83,7 @@ sequenceDiagram %% tab completion: 'diagram'
 - [x] Preview in browser
   - From the Command Palette: `Mermaid: View In Browser`
   - Defaults to the entire file, unless there is a selection.
+  - Configurable settings: `quiet_graph_links`, `theme`.
 
 - [x] Exporting, with caveats:
   - PNG conversion from SVG conflicts with opening file-URL's, so it's a link.
