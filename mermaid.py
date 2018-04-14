@@ -6,7 +6,7 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     view = self.view
     title = path.splitext(path.basename(view.file_name() or 'untitled'))[0]
-    name = '%s-%s-mermaid-view.html' % (title, view.id())
+    name = '{0}-{1}-mermaid-view.html'.format(title, view.id())
     pathname = path.join(tempfile.gettempdir(), name)
     selection = view.sel()
     region = selection[0] if selection[0].size() else sublime.Region(0, view.size())
@@ -17,7 +17,7 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
         'settings': sublime.load_settings('mermaid.sublime-settings'),
         'title': title
       }))
-    url = 'file://%s' % pathname.replace(' ', '%20').replace('(', '%28').replace(')', '%29')
+    url = 'file://{}'.format(pathname.replace(' ', '%20').replace('(', '%28').replace(')', '%29'))
     webbrowser.get(using='safari').open_new_tab(url)
 
   def html(self, parameters):
