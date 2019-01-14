@@ -4,6 +4,7 @@
 name: Mermaid
 file_extensions:
   - mermaid
+  - mmd
 scope: source.mermaid
 variables:
   graph_link: (?:-?-(?:-|\>)|=?=(?:=|\>)|(?:\.-|-\.)-?\>?)
