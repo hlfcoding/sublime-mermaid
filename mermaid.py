@@ -81,7 +81,7 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
 %(mermaid)s
           </div>
         </div>
-        <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
         <script>
           mermaid.initialize({
             flowchart: { useMaxWidth: false },
