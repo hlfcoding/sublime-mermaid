@@ -18,7 +18,7 @@ class MermaidViewCommand(sublime_plugin.TextCommand):
         'title': title
       }))
     url = 'file://{}'.format(pathname.replace(' ', '%20').replace('(', '%28').replace(')', '%29'))
-    webbrowser.get(using='safari').open_new_tab(url)
+    webbrowser.get().open_new_tab(url)
 
   def html(self, parameters):
     parameters['mermaid'] = textwrap.indent(parameters['mermaid'], ' ' * 10)
