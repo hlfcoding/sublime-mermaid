@@ -1,0 +1,4 @@
+- Recognize '.mmd' file extension (fix, h/t @pmackay)
+- Respect user-default in view-in-browser (fix, h/t @limnick, @ZimbiX)
+
+As always, issues and pull requests are welcomed.
