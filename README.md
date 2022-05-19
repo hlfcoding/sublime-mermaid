@@ -1,5 +1,11 @@
 # Mermaid (for Sublime)
 
+**This package is no longer maintained. Please check out any forks or alternatives.**
+
+ST4 has been out for a while now, and it's a paid upgrade. Instead of being lavished on tooling and hobby projects, my coding time (maybe from disinterest) has shrunk to focus on work, where VSCode is used. Code, being free and when run on M1, really makes Sublime not seem worth it. And so, if you installed this package, apologies and thank you!
+
+---
+
 > :tropical_fish: The missing [Sublime Text 3][] package for [Mermaid][].
 
 [Install Mermaid][] from [Package Control][].
